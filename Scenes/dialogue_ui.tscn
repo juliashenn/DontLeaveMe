@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://dy8q7npgyl160"]
+
+[ext_resource type="Script" uid="uid://e2fwxgcybxg" path="res://Scripts/dialogue_ui.gd" id="1_q8n66"]
+
+[node name="DialogueUI" type="CanvasLayer"]
+script = ExtResource("1_q8n66")
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="DialogueText" type="Label" parent="Panel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Timer" type="Timer" parent="Panel"]

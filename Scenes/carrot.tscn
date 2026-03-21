@@ -1,0 +1,56 @@
+[gd_scene load_steps=11 format=3 uid="uid://dgyimih7ptm6m"]
+
+[ext_resource type="Script" uid="uid://btng5ac7bfpxc" path="res://Scripts/carrot.gd" id="1_lk8jr"]
+[ext_resource type="Texture2D" uid="uid://ceexwhxng8dy7" path="res://Assets/Carott/sprite_carotte0.png" id="1_papeb"]
+[ext_resource type="Texture2D" uid="uid://q34fkkgyikcq" path="res://Assets/Carott/sprite_carotte1.png" id="2_lk8jr"]
+[ext_resource type="Texture2D" uid="uid://s0o25b0qh6hg" path="res://Assets/Carott/sprite_carotte2.png" id="3_r3d11"]
+[ext_resource type="Texture2D" uid="uid://dun8ww3w0nhyb" path="res://Assets/Carott/sprite_carotte3.png" id="4_3bqgx"]
+[ext_resource type="Texture2D" uid="uid://cxmv2k5h87qp8" path="res://Assets/Carott/sprite_carotte4.png" id="5_oqq4l"]
+[ext_resource type="PackedScene" uid="uid://jnip1by277tv" path="res://Scenes/flame.tscn" id="7_3bqgx"]
+[ext_resource type="PackedScene" uid="uid://oqkdvla33dp4" path="res://Scenes/interactable.tscn" id="7_r3d11"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ni15g"]
+animations = [{
+"frames": [{
+"duration": 2.0,
+"texture": ExtResource("1_papeb")
+}, {
+"duration": 2.0,
+"texture": ExtResource("2_lk8jr")
+}, {
+"duration": 2.0,
+"texture": ExtResource("3_r3d11")
+}, {
+"duration": 2.0,
+"texture": ExtResource("4_3bqgx")
+}, {
+"duration": 2.0,
+"texture": ExtResource("5_oqq4l")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3bqgx"]
+radius = 15.0
+
+[node name="Carrot" type="Node2D"]
+script = ExtResource("1_lk8jr")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_ni15g")
+frame_progress = 0.6779598
+
+[node name="Flame" parent="." instance=ExtResource("7_3bqgx")]
+texture_scale = 0.3
+flicker_strength = 0.0
+energy_base = 0.1
+energy_variation = 0.0
+
+[node name="Interactable" parent="." instance=ExtResource("7_r3d11")]
+interact_name = "E to Pick Up"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable"]
+shape = SubResource("CircleShape2D_3bqgx")

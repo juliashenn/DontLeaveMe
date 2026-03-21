@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://jnip1by277tv"]
+
+[ext_resource type="Script" uid="uid://7xwp06rg83ai" path="res://Scripts/flame.gd" id="1_o8fj5"]
+
+[sub_resource type="Gradient" id="Gradient_37tmc"]
+offsets = PackedFloat32Array(0, 0.68666667)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_o8fj5"]
+gradient = SubResource("Gradient_37tmc")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[node name="Flame" type="PointLight2D"]
+texture = SubResource("GradientTexture2D_o8fj5")
+script = ExtResource("1_o8fj5")
