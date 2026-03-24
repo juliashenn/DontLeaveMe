@@ -36,12 +36,14 @@ animations = [{
 radius = 15.0
 
 [node name="Carrot" type="Node2D"]
+scale = Vector2(1.5, 1.5)
 script = ExtResource("1_lk8jr")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_ni15g")
-frame_progress = 0.6779598
+frame = 2
+frame_progress = 0.22173972
 
 [node name="Flame" parent="." instance=ExtResource("7_3bqgx")]
 texture_scale = 0.3

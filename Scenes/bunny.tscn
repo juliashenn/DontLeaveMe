@@ -1,6 +1,7 @@
-[gd_scene load_steps=66 format=3 uid="uid://ctiv4j1p34tkl"]
+[gd_scene load_steps=67 format=3 uid="uid://ctiv4j1p34tkl"]
 
 [ext_resource type="Texture2D" uid="uid://lkvswld6a46c" path="res://Assets/32PixelBunny/PNG/BunnyAttack-Sheet.png" id="1_nmxph"]
+[ext_resource type="Script" uid="uid://b7ts300m6dxhg" path="res://Scripts/bunny.gd" id="1_y64bf"]
 [ext_resource type="Texture2D" uid="uid://cn2tr6c0aa2t1" path="res://Assets/32PixelBunny/PNG/BunnyCarrotSkill-Sheet.png" id="2_y64bf"]
 [ext_resource type="Texture2D" uid="uid://dimsbvh27iofs" path="res://Assets/32PixelBunny/PNG/BunnyDead-Sheet.png" id="3_4xcxn"]
 [ext_resource type="Texture2D" uid="uid://cdyuw1rpwfxqt" path="res://Assets/32PixelBunny/PNG/BunnyHurt-Sheet.png" id="4_02mnf"]
@@ -250,7 +251,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_mq81v")
 }],
-"loop": true,
+"loop": false,
 "name": &"Attack",
 "speed": 5.0
 }, {
@@ -300,7 +301,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_l8yvo")
 }],
-"loop": true,
+"loop": false,
 "name": &"CarrotSkill",
 "speed": 5.0
 }, {
@@ -346,7 +347,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_xyomv")
 }],
-"loop": true,
+"loop": false,
 "name": &"Hurt",
 "speed": 5.0
 }, {
@@ -441,10 +442,11 @@ radius = 5.0
 height = 10.0
 
 [node name="Bunny" type="Node2D"]
+script = ExtResource("1_y64bf")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_1e44p")
-animation = &"IdleStanding"
+animation = &"LyingDown"
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 

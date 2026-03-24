@@ -7,6 +7,8 @@ func _ready():
 	player = get_tree().get_first_node_in_group("player")
 	camera = get_tree().get_first_node_in_group("camera")
 
+func start_dialogue():
+	move_player_to(Vector2(158.0, 435))
 
 func move_player_to(target_position: Vector2, speed := 100.0):
 	DayManager.set_state(DayManager.GameState.CUTSCENE)

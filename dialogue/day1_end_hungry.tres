@@ -1,0 +1,47 @@
+[gd_resource type="Resource" script_class="DialogueResource" load_steps=9 format=3 uid="uid://db3u285swkfpx"]
+
+[ext_resource type="Script" uid="uid://c1y04o8kyakix" path="res://Resources/DialogueLine.gd" id="1_4ykff"]
+[ext_resource type="Script" uid="uid://ccc6dbr3u3w68" path="res://Resources/DialogueResource.gd" id="2_mdj1g"]
+
+[sub_resource type="Resource" id="Resource_35xvq"]
+script = ExtResource("1_4ykff")
+speaker = "bunny"
+text = "You're back… good. "
+animation = "Sitting"
+metadata/_custom_type_script = "uid://c1y04o8kyakix"
+
+[sub_resource type="Resource" id="Resource_4ykff"]
+script = ExtResource("1_4ykff")
+speaker = "bunny"
+text = "But the carrots? You forgot about the carrots…"
+metadata/_custom_type_script = "uid://c1y04o8kyakix"
+
+[sub_resource type="Resource" id="Resource_mdj1g"]
+script = ExtResource("1_4ykff")
+speaker = "bunny"
+text = "It's only the first day, so I forgive you. "
+metadata/_custom_type_script = "uid://c1y04o8kyakix"
+
+[sub_resource type="Resource" id="Resource_3foc3"]
+script = ExtResource("1_4ykff")
+speaker = "bunny"
+text = "But tomorrow I'll be much hungrier."
+metadata/_custom_type_script = "uid://c1y04o8kyakix"
+
+[sub_resource type="Resource" id="Resource_on0et"]
+script = ExtResource("1_4ykff")
+speaker = "bunny"
+text = "I wonder what else there is to eat."
+metadata/_custom_type_script = "uid://c1y04o8kyakix"
+
+[sub_resource type="Resource" id="Resource_eryij"]
+script = ExtResource("1_4ykff")
+speaker = "bunny"
+text = "Let's sleep now."
+animation = "Sleeping"
+metadata/_custom_type_script = "uid://c1y04o8kyakix"
+
+[resource]
+script = ExtResource("2_mdj1g")
+lines = Array[ExtResource("1_4ykff")]([SubResource("Resource_35xvq"), SubResource("Resource_4ykff"), SubResource("Resource_mdj1g"), SubResource("Resource_3foc3"), SubResource("Resource_on0et"), SubResource("Resource_eryij")])
+metadata/_custom_type_script = "uid://ccc6dbr3u3w68"

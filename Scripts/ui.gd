@@ -1,20 +1,44 @@
 extends CanvasLayer
+@onready var time_label: Label = $CenterContainer/TimeLabel
+@onready var egg: HBoxContainer = $VBox/Egg
+@onready var torch: HBoxContainer = $VBox/Torch
 
 var labels = {}
+var boxes = {}
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	labels = {
-		"carrot": $Control/CarrotLabel,
-		"torch": $Control/TorchLabel,
-		"egg": $Control/EggLabel,
+		"carrot": $VBox/Carrot/CarrotLabel,
+		"torch": $VBox/Torch/TorchLabel,
+		"egg": $VBox/Egg/EggLabel,
 	}
+	boxes = {
+		"carrot": $VBox/Carrot,
+		"torch": $VBox/Torch,
+		"egg": $VBox/Egg,
+	}
+	egg.visible = false
+	torch.visible = false
 	ResourceManager.resource_changed.connect(_on_resource_changed)
 	ResourceManager.food_requirement_changed.connect(_on_food_requirement_changed)
+	DayManager.time_updated.connect(_on_time_changed)
 	update_all()
+
+func _on_time_changed(time):
+	var seconds = int(time)
+	time_label.text = "%d:%02d" % [seconds / 60, seconds % 60]
+	if time <= 10.0:
+		time_label.modulate = Color.RED
+	else:
+		time_label.modulate = Color.WHITE
 
 func _on_resource_changed(type, amount):
 	if labels.has(type):
 		labels[type].text = _format_text(type, amount)
+		if amount != 0:
+			boxes[type].visible = true
+		else:
+			boxes[type].visible = false
 
 func _on_food_requirement_changed(required):
 	var current_food = ResourceManager.get_resource("carrot")
@@ -28,7 +52,6 @@ func update_all():
 
 		label.text = _format_text(type, value)
 
-
 func _format_text(type: String, value: int) -> String:
 	match type:
 		"carrot":
@@ -39,3 +62,11 @@ func _format_text(type: String, value: int) -> String:
 			return "Eggs: %d" % value
 		_:
 			return "%s: %d" % [type.capitalize(), value]
+			
+func _input(event):
+	if event.is_action_pressed("ui_cancel"):
+		DayManager.pause_game()
+
+
+func _on_pause_button_pressed() -> void:
+	DayManager.pause_game()

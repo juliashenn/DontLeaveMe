@@ -1,0 +1,34 @@
+[gd_scene load_steps=7 format=3 uid="uid://c13r3p86hjljf"]
+
+[ext_resource type="Script" uid="uid://bpw5c77anadv1" path="res://Scripts/nest.gd" id="1_6mxnq"]
+[ext_resource type="Texture2D" uid="uid://dsv0xsvaucxok" path="res://Assets/nest.png" id="1_md315"]
+[ext_resource type="PackedScene" uid="uid://oqkdvla33dp4" path="res://Scenes/interactable.tscn" id="2_xe7l4"]
+[ext_resource type="Texture2D" uid="uid://jpvj70tb8q1m" path="res://Assets/eggBrown.png" id="4_8t26g"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xe7l4"]
+size = Vector2(16, 5)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6mxnq"]
+radius = 16.0
+
+[node name="Nest" type="Node2D"]
+script = ExtResource("1_6mxnq")
+
+[node name="Nest" type="Sprite2D" parent="."]
+texture = ExtResource("1_md315")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_xe7l4")
+
+[node name="Interactable" parent="." instance=ExtResource("2_xe7l4")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable"]
+shape = SubResource("CircleShape2D_6mxnq")
+
+[node name="Egg" type="Sprite2D" parent="."]
+position = Vector2(0, -6)
+scale = Vector2(1.1, 1.1)
+texture = ExtResource("4_8t26g")

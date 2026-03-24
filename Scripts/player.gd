@@ -3,18 +3,34 @@ extends CharacterBody2D
 # its own flame goes out, cave roof disappears 
 
 @export var speed : float = 150
+@onready var anim: AnimatedSprite2D = $AnimatedSprite2D
+@export var dialogue_position : Vector2 = Vector2(158, 435)
 
 @onready var light = $Flame
 var last_direction := "Down"
 var light_radius: float = 25.0
-var target_position: Vector2 = Vector2.ZERO
 var light_speed: float = 5.0  # higher = faster smoothing
 
-var can_move := true
+var can_move := false
+
+var is_home := true
+
+const SPEAKER_ID := "knight"
 
 func _ready() -> void:
 	DayManager.state_changed.connect(_on_state_changed)
-	
+	DialogueManager.speaker_animation_requested.connect(_on_animation_requested)
+	DialogueManager.dialogue_ended.connect(_on_dialogue_ended)
+	DialogueManager.setup.connect(_setup_dialogue)
+
+func _on_animation_requested(speaker: String, animation: String):
+	if speaker == SPEAKER_ID:
+		if anim.sprite_frames.has_animation(animation):
+			anim.play(animation)
+
+func _on_dialogue_ended():
+	anim.play("IdleDown")
+
 func _on_state_changed(state):
 	can_move = (state == DayManager.GameState.EXPLORING)
 
@@ -58,11 +74,25 @@ func get_direction_name(dir: Vector2) -> String:
 
 	return directions[sector]
 	
-func move_player_to(target_position: Vector2, move_speed := 2.0):
-	DayManager.set_state(DayManager.GameState.CUTSCENE)
-
+func move_player_to(target_position: Vector2):
+	if DayManager.current_state == DayManager.GameState.EXPLORING:
+		return 
+	anim.play("WalkDiagUpLeft")
 	while global_position.distance_to(target_position) > 0.1:
-		global_position = global_position.move_toward(target_position, move_speed * get_process_delta_time())
+		global_position = global_position.move_toward(target_position, speed * get_process_delta_time())
 		await get_tree().process_frame
+	anim.play("IdleDiagUpLeft")
+		
+func _setup_dialogue():
+	move_player_to(Vector2(158, 435))
 
 	# stop movement control here if needed
+func set_is_home(isat):
+	is_home = isat
+	if isat:
+		toggle_flame(false)
+	else:
+		toggle_flame(true)
+	
+func get_is_home():
+	return is_home

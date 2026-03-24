@@ -1,0 +1,38 @@
+[gd_resource type="Resource" script_class="DialogueResource" load_steps=7 format=3 uid="uid://usojp630nojk"]
+
+[ext_resource type="Script" uid="uid://c1y04o8kyakix" path="res://Resources/DialogueLine.gd" id="1_hhts2"]
+[ext_resource type="Script" uid="uid://ccc6dbr3u3w68" path="res://Resources/DialogueResource.gd" id="2_ru41j"]
+
+[sub_resource type="Resource" id="Resource_qmr7v"]
+script = ExtResource("1_hhts2")
+speaker = "bunny"
+text = "Oh you're back! …But where are the carrots?"
+animation = "Sitting"
+metadata/_custom_type_script = "uid://c1y04o8kyakix"
+
+[sub_resource type="Resource" id="Resource_i3m2y"]
+script = ExtResource("1_hhts2")
+speaker = "bunny"
+text = "That's not enough. "
+animation = "Sitting"
+metadata/_custom_type_script = "uid://c1y04o8kyakix"
+
+[sub_resource type="Resource" id="Resource_57uv3"]
+script = ExtResource("1_hhts2")
+speaker = "bunny"
+text = "Could you please go out and try to find more?"
+animation = "LyingDown"
+metadata/_custom_type_script = "uid://c1y04o8kyakix"
+
+[sub_resource type="Resource" id="Resource_at8sf"]
+script = ExtResource("1_hhts2")
+speaker = "bunny"
+text = "I'll be waiting. "
+animation = "Sleeping"
+metadata/_custom_type_script = "uid://c1y04o8kyakix"
+
+[resource]
+script = ExtResource("2_ru41j")
+lines = Array[ExtResource("1_hhts2")]([SubResource("Resource_qmr7v"), SubResource("Resource_i3m2y"), SubResource("Resource_57uv3"), SubResource("Resource_at8sf")])
+auto_advance = true
+metadata/_custom_type_script = "uid://ccc6dbr3u3w68"

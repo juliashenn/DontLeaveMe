@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=3 uid="uid://b7xgmsl8x7w8f"]
+
+[ext_resource type="Texture2D" uid="uid://jpvj70tb8q1m" path="res://Assets/eggBrown.png" id="1_1iuog"]
+[ext_resource type="Script" uid="uid://bwxau4gq6cu2t" path="res://Scripts/egg.gd" id="1_io5x2"]
+[ext_resource type="PackedScene" uid="uid://oqkdvla33dp4" path="res://Scenes/interactable.tscn" id="2_85tk0"]
+[ext_resource type="PackedScene" uid="uid://jnip1by277tv" path="res://Scenes/flame.tscn" id="4_y3rox"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_io5x2"]
+radius = 15.0
+
+[node name="Egg" type="Node2D"]
+scale = Vector2(1.3, 1.3)
+script = ExtResource("1_io5x2")
+
+[node name="EggBrown" type="Sprite2D" parent="."]
+texture = ExtResource("1_1iuog")
+
+[node name="Interactable" parent="." instance=ExtResource("2_85tk0")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable"]
+shape = SubResource("CircleShape2D_io5x2")
+
+[node name="Flame" parent="." instance=ExtResource("4_y3rox")]
+flicker_strength = 0.0
+energy_base = 0.1
+energy_variation = 0.0

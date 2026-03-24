@@ -1,0 +1,65 @@
+[gd_scene load_steps=3 format=3 uid="uid://08f6cwpgcvpp"]
+
+[ext_resource type="Texture2D" uid="uid://c6y5d668xs6h6" path="res://Assets/Freebuttons/LongButtons2.png" id="1_3bxa3"]
+[ext_resource type="Script" uid="uid://3va0p86cbh0u" path="res://Scripts/start.gd" id="1_r48yj"]
+
+[node name="Start" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1152.0
+offset_bottom = -648.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_r48yj")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1172.0
+offset_bottom = 666.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.18, 0.018000005, 0.018000005, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_right = 508.71307
+offset_bottom = 366.53033
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2.2684696, 1.7515604)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Don't Leave Me "
+
+[node name="StartButton" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Start"
+icon_alignment = 1
+
+[node name="QuitButton" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Quit
+"
+icon_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("1_3bxa3")
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

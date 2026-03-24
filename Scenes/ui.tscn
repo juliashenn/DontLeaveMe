@@ -1,93 +1,105 @@
-[gd_scene load_steps=7 format=3 uid="uid://bfou3cssay5ij"]
+[gd_scene load_steps=12 format=3 uid="uid://bfou3cssay5ij"]
 
 [ext_resource type="Script" uid="uid://bjc0ptpvtt0r3" path="res://Scripts/ui.gd" id="1_jxero"]
 [ext_resource type="Texture2D" uid="uid://ceexwhxng8dy7" path="res://Assets/Carott/sprite_carotte0.png" id="2_2246s"]
-[ext_resource type="Texture2D" uid="uid://dfqqh627m65cc" path="res://Assets/egg.png" id="3_q7pk6"]
+[ext_resource type="Texture2D" uid="uid://bfv2ccr6s4xgd" path="res://Assets/egg.png" id="3_q7pk6"]
 [ext_resource type="Texture2D" uid="uid://pf53kdi6igey" path="res://Assets/torches.png" id="4_m78vo"]
+[ext_resource type="Texture2D" uid="uid://2uxd7xnffgsh" path="res://Assets/Freebuttons/freebuttons2.png" id="5_q7pk6"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_2246s"]
+font_size = 24
+
+[sub_resource type="LabelSettings" id="LabelSettings_q7pk6"]
+font_size = 24
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_smcll"]
 atlas = ExtResource("4_m78vo")
 region = Rect2(22, 32, 16, 24)
 
+[sub_resource type="LabelSettings" id="LabelSettings_m78vo"]
+font_size = 24
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m78vo"]
+atlas = ExtResource("5_q7pk6")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ryf15"]
+atlas = ExtResource("5_q7pk6")
+region = Rect2(48, 0, 16, 16)
+
 [node name="UI" type="CanvasLayer"]
 script = ExtResource("1_jxero")
 
-[node name="Control" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="VBox" type="VBoxContainer" parent="."]
+offset_right = 134.0
+offset_bottom = 138.0
 
-[node name="CarrotLabel" type="Label" parent="Control"]
-layout_mode = 0
-offset_left = 41.0
-offset_top = 15.0
-offset_right = 89.0
-offset_bottom = 38.0
+[node name="Carrot" type="HBoxContainer" parent="VBox"]
+layout_mode = 2
+
+[node name="Carrot" type="TextureRect" parent="VBox/Carrot"]
+layout_mode = 2
+texture = ExtResource("2_2246s")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="CarrotLabel" type="Label" parent="VBox/Carrot"]
+layout_mode = 2
 text = "carrot"
 label_settings = SubResource("LabelSettings_2246s")
 
-[node name="Carrot" type="TextureRect" parent="Control/CarrotLabel"]
-layout_mode = 1
-anchors_preset = -1
-anchor_top = 0.47800002
-anchor_bottom = 0.47800002
-offset_left = -31.0
-offset_top = -20.994
-offset_bottom = 16.006
-texture = ExtResource("2_2246s")
-stretch_mode = 5
+[node name="Egg" type="HBoxContainer" parent="VBox"]
+layout_mode = 2
 
-[node name="EggLabel" type="Label" parent="Control"]
-layout_mode = 0
-offset_left = 44.0
-offset_top = 49.0
-offset_right = 84.0
-offset_bottom = 72.0
-text = "egg"
-
-[node name="Egg" type="TextureRect" parent="Control/EggLabel"]
-layout_mode = 1
-anchors_preset = -1
-anchor_top = 0.609
-anchor_bottom = 0.609
-offset_left = -37.0
-offset_top = -21.007
-offset_right = -2.0
-offset_bottom = 9.992999
+[node name="Egg" type="TextureRect" parent="VBox/Egg"]
+layout_mode = 2
 texture = ExtResource("3_q7pk6")
+expand_mode = 3
 stretch_mode = 5
 
-[node name="TorchLabel" type="Label" parent="Control"]
-layout_mode = 0
-offset_left = 42.0
-offset_top = 86.0
-offset_right = 84.0
-offset_bottom = 109.0
-text = "torch"
+[node name="EggLabel" type="Label" parent="VBox/Egg"]
+layout_mode = 2
+text = "egg"
+label_settings = SubResource("LabelSettings_q7pk6")
 
-[node name="TextureRect" type="TextureRect" parent="Control/TorchLabel"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = -0.048
-anchor_top = 0.34800002
-anchor_right = -0.048
-anchor_bottom = 0.34800002
-offset_left = -33.984
-offset_top = -23.004002
-offset_right = 6.016
-offset_bottom = 16.995998
+[node name="Torch" type="HBoxContainer" parent="VBox"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Torch" type="TextureRect" parent="VBox/Torch"]
+layout_mode = 2
 texture = SubResource("AtlasTexture_smcll")
-expand_mode = 1
+expand_mode = 3
 stretch_mode = 5
 
-[node name="FoodLabel" type="Label" parent="Control"]
-visible = false
-layout_mode = 0
-offset_left = 49.0
-offset_top = 115.0
-offset_right = 89.0
-offset_bottom = 138.0
-text = "food"
+[node name="TorchLabel" type="Label" parent="VBox/Torch"]
+layout_mode = 2
+text = "torch"
+label_settings = SubResource("LabelSettings_m78vo")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchors_preset = 10
+anchor_right = 1.0
+offset_right = 2.0
+offset_bottom = 49.0
+grow_horizontal = 2
+
+[node name="TimeLabel" type="Label" parent="CenterContainer"]
+layout_mode = 2
+text = "time
+"
+
+[node name="PauseButton" type="TextureButton" parent="."]
+anchors_preset = -1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -58.0
+offset_top = 5.0
+offset_right = -12.0
+offset_bottom = 58.0
+texture_normal = SubResource("AtlasTexture_m78vo")
+texture_pressed = SubResource("AtlasTexture_ryf15")
+stretch_mode = 5
+
+[connection signal="pressed" from="PauseButton" to="." method="_on_pause_button_pressed"]

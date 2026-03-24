@@ -1,17 +1,111 @@
-[gd_scene load_steps=2 format=3 uid="uid://dy8q7npgyl160"]
+[gd_scene load_steps=9 format=3 uid="uid://dy8q7npgyl160"]
 
 [ext_resource type="Script" uid="uid://e2fwxgcybxg" path="res://Scripts/dialogue_ui.gd" id="1_q8n66"]
+[ext_resource type="Texture2D" uid="uid://ceoxrfmcbhknd" path="res://Assets/32PixelBunny/PNG/BunnySitting-Sheet.png" id="2_gsrxu"]
+[ext_resource type="Texture2D" uid="uid://dwb40aehhbk4k" path="res://Assets/map.png" id="3_3gjcu"]
+[ext_resource type="Texture2D" uid="uid://c6h62xrv8n42x" path="res://Assets/2D HD Character Knight/Spritesheets/With shadows/Idle.png" id="4_ethgc"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_q8n66"]
+font_size = 36
+font_color = Color(1, 0.83, 0.83, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3gjcu"]
+atlas = ExtResource("2_gsrxu")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xl4hb"]
+atlas = ExtResource("4_ethgc")
+region = Rect2(32, 172, 64, 64)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ethgc"]
+font_size = 36
 
 [node name="DialogueUI" type="CanvasLayer"]
 script = ExtResource("1_q8n66")
 
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 90.0
+offset_top = -46.0
+offset_right = -1022.0
+offset_bottom = -654.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Map" type="TextureRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -67.0
+offset_top = 38.0
+offset_right = 1016.0
+offset_bottom = 430.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("3_3gjcu")
+expand_mode = 1
+stretch_mode = 5
+
 [node name="Panel" type="Panel" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = -1
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 40.0
+offset_top = -186.0
+offset_right = -40.0
+offset_bottom = -40.0
 
 [node name="DialogueText" type="Label" parent="Panel"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 25.0
+offset_top = 25.0
+offset_right = -25.0
+offset_bottom = -25.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "asdfasdfasdf"
+label_settings = SubResource("LabelSettings_q8n66")
+autowrap_mode = 3
 
 [node name="Timer" type="Timer" parent="Panel"]
+
+[node name="Portrait" type="Control" parent="Panel"]
+anchors_preset = 0
+offset_left = -9.0
+offset_top = -125.0
+offset_right = 31.0
+offset_bottom = -85.0
+
+[node name="BunnyPortrait" type="TextureRect" parent="Panel/Portrait"]
+layout_mode = 0
+offset_right = 158.0
+offset_bottom = 144.0
+texture = SubResource("AtlasTexture_3gjcu")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="KnightPortrait" type="TextureRect" parent="Panel/Portrait"]
+layout_mode = 0
+offset_right = 157.0
+offset_bottom = 152.0
+texture = SubResource("AtlasTexture_xl4hb")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="SpeakerName" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 129.0
+offset_top = -44.0
+offset_right = 376.0
+offset_bottom = 6.0
+text = "Injured Rabbit"
+label_settings = SubResource("LabelSettings_ethgc")

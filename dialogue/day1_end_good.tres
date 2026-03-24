@@ -1,0 +1,35 @@
+[gd_resource type="Resource" script_class="DialogueResource" load_steps=7 format=3 uid="uid://dq1o00ccuacgw"]
+
+[ext_resource type="Script" uid="uid://c1y04o8kyakix" path="res://Resources/DialogueLine.gd" id="1_w0g7j"]
+[ext_resource type="Script" uid="uid://ccc6dbr3u3w68" path="res://Resources/DialogueResource.gd" id="2_dc7ly"]
+
+[sub_resource type="Resource" id="Resource_isn6x"]
+script = ExtResource("1_w0g7j")
+speaker = "bunny"
+text = "You brought carrots back! Thank you... really thank you so much."
+animation = "Sitting"
+metadata/_custom_type_script = "uid://c1y04o8kyakix"
+
+[sub_resource type="Resource" id="Resource_03bcn"]
+script = ExtResource("1_w0g7j")
+speaker = "bunny"
+text = "I'd knew you'd come back for me. You're a good knight."
+metadata/_custom_type_script = "uid://c1y04o8kyakix"
+
+[sub_resource type="Resource" id="Resource_o8vqy"]
+script = ExtResource("1_w0g7j")
+speaker = "bunny"
+text = "Let's rest for the day now."
+animation = "Sleeping"
+metadata/_custom_type_script = "uid://c1y04o8kyakix"
+
+[sub_resource type="Resource" id="Resource_w3cq1"]
+script = ExtResource("1_w0g7j")
+speaker = "bunny"
+text = "… You'll still be there tomorrow, right?"
+metadata/_custom_type_script = "uid://c1y04o8kyakix"
+
+[resource]
+script = ExtResource("2_dc7ly")
+lines = Array[ExtResource("1_w0g7j")]([SubResource("Resource_isn6x"), SubResource("Resource_03bcn"), SubResource("Resource_o8vqy"), SubResource("Resource_w3cq1")])
+metadata/_custom_type_script = "uid://ccc6dbr3u3w68"

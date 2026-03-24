@@ -1,8 +1,58 @@
-[gd_resource type="Resource" script_class="DialogueResource" load_steps=2 format=3 uid="uid://xwjv8rh13gm2"]
+[gd_resource type="Resource" script_class="DialogueResource" load_steps=11 format=3 uid="uid://xwjv8rh13gm2"]
 
+[ext_resource type="Script" uid="uid://c1y04o8kyakix" path="res://Resources/DialogueLine.gd" id="1_fml43"]
 [ext_resource type="Script" uid="uid://ccc6dbr3u3w68" path="res://Resources/DialogueResource.gd" id="1_xwkgk"]
+
+[sub_resource type="Resource" id="Resource_walxi"]
+script = ExtResource("1_fml43")
+text = "Ow!"
+animation = "Hurt"
+metadata/_custom_type_script = "uid://c1y04o8kyakix"
+
+[sub_resource type="Resource" id="Resource_8pcdu"]
+script = ExtResource("1_fml43")
+text = "A knight in shining armor!"
+animation = "Dead"
+metadata/_custom_type_script = "uid://c1y04o8kyakix"
+
+[sub_resource type="Resource" id="Resource_uxjnj"]
+script = ExtResource("1_fml43")
+text = "Please help me! I've been injured and need food. "
+animation = "Sleeping"
+metadata/_custom_type_script = "uid://c1y04o8kyakix"
+
+[sub_resource type="Resource" id="Resource_jhc83"]
+script = ExtResource("1_fml43")
+speaker = "knight"
+text = "Of course I'll help you find food. It's my duty as a knight."
+metadata/_custom_type_script = "uid://c1y04o8kyakix"
+
+[sub_resource type="Resource" id="Resource_fml43"]
+script = ExtResource("1_fml43")
+text = "Thank you so much! I'm feeling quite weak... I think 3 carrots will cheer me up."
+animation = "Sleeping"
+metadata/_custom_type_script = "uid://c1y04o8kyakix"
+
+[sub_resource type="Resource" id="Resource_yg2qe"]
+script = ExtResource("1_fml43")
+text = "Please hurry, I don't know how long I can last. "
+animation = "Sleeping"
+metadata/_custom_type_script = "uid://c1y04o8kyakix"
+
+[sub_resource type="Resource" id="Resource_wbjdd"]
+script = ExtResource("1_fml43")
+speaker = "map"
+text = "Here's a map to help you. The carrot field should be southeast of us."
+metadata/_custom_type_script = "uid://c1y04o8kyakix"
+
+[sub_resource type="Resource" id="Resource_i7d6y"]
+script = ExtResource("1_fml43")
+text = "You'll come back… right?"
+animation = "Sleeping"
+metadata/_custom_type_script = "uid://c1y04o8kyakix"
 
 [resource]
 script = ExtResource("1_xwkgk")
-lines = Array[String](["Day1 hihi", "324"])
+lines = Array[ExtResource("1_fml43")]([SubResource("Resource_walxi"), SubResource("Resource_8pcdu"), SubResource("Resource_uxjnj"), SubResource("Resource_jhc83"), SubResource("Resource_fml43"), SubResource("Resource_yg2qe"), SubResource("Resource_wbjdd"), SubResource("Resource_i7d6y")])
+auto_advance = true
 metadata/_custom_type_script = "uid://ccc6dbr3u3w68"
