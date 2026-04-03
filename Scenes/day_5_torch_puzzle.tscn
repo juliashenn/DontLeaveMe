@@ -1,0 +1,62 @@
+[gd_scene load_steps=8 format=3 uid="uid://c7jq46vs6rs1p"]
+
+[ext_resource type="Texture2D" uid="uid://bfv2ccr6s4xgd" path="res://Assets/egg.png" id="1_k0oq3"]
+[ext_resource type="Script" uid="uid://ksc1eqd40gt7" path="res://Scripts/day_5_torch_puzzle.gd" id="1_p1dde"]
+[ext_resource type="PackedScene" uid="uid://h44x4vrm7p8r" path="res://Scenes/torch.tscn" id="2_p1dde"]
+[ext_resource type="PackedScene" uid="uid://dgyimih7ptm6m" path="res://Scenes/carrot.tscn" id="3_okkx2"]
+[ext_resource type="PackedScene" uid="uid://jnip1by277tv" path="res://Scenes/flame.tscn" id="4_10462"]
+[ext_resource type="Texture2D" uid="uid://bkvio8v8mkmsx" path="res://Assets/Rabbit_sheet.png" id="5_v375w"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s7fso"]
+atlas = ExtResource("5_v375w")
+region = Rect2(0, 128, 48, 64)
+
+[node name="Day5TorchPuzzle" type="Node2D"]
+script = ExtResource("1_p1dde")
+
+[node name="Egg" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-7.9999847, 14.5)
+scale = Vector2(37.625, 19.6875)
+texture = ExtResource("1_k0oq3")
+
+[node name="Torch4" parent="." instance=ExtResource("2_p1dde")]
+texture_filter = 2
+position = Vector2(-154, 4)
+color = "Purple"
+
+[node name="Torch" parent="." instance=ExtResource("2_p1dde")]
+texture_filter = 2
+position = Vector2(0, -72)
+
+[node name="Torch2" parent="." instance=ExtResource("2_p1dde")]
+texture_filter = 2
+position = Vector2(151, 5)
+color = "Blue"
+
+[node name="Torch3" parent="." instance=ExtResource("2_p1dde")]
+texture_filter = 2
+position = Vector2(-1, 80)
+color = "Green"
+
+[node name="Carrot" parent="." instance=ExtResource("3_okkx2")]
+visible = false
+position = Vector2(-41, 0)
+
+[node name="Flame" parent="." instance=ExtResource("4_10462")]
+position = Vector2(-9.5625, 8)
+scale = Vector2(1.3886719, 1.2499999)
+flicker_strength = 0.0
+energy_base = 0.4
+energy_variation = 0.0
+base_color = Color(0.99366266, 0.7297942, 0.74600106, 1)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -27.0
+offset_top = -40.0
+offset_right = 38.0
+offset_bottom = 28.0
+texture = SubResource("AtlasTexture_s7fso")
+expand_mode = 3
+stretch_mode = 5
+flip_h = true

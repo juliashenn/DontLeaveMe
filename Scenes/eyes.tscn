@@ -1,0 +1,48 @@
+[gd_scene load_steps=9 format=3 uid="uid://c80yqvf712svh"]
+
+[ext_resource type="Texture2D" uid="uid://bt5tysc0yvh43" path="res://Assets/eye.png" id="1_hk0ap"]
+[ext_resource type="Script" uid="uid://4gkvp62vjcy7" path="res://Scripts/eyes.gd" id="1_vievv"]
+[ext_resource type="Texture2D" uid="uid://lvjisx5m2dfg" path="res://Assets/pixil-frame-0 (2).png" id="2_vievv"]
+[ext_resource type="Texture2D" uid="uid://dp1beco5t81hh" path="res://Assets/pixil-frame-0 (3).png" id="3_40c4w"]
+[ext_resource type="Texture2D" uid="uid://b8b6k4ns28q0p" path="res://Assets/pixil-frame-0 (4).png" id="4_530wo"]
+[ext_resource type="Texture2D" uid="uid://l72snvxsg5dw" path="res://Assets/pixil-frame-0 (5).png" id="5_3ur0b"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_hk0ap"]
+light_mode = 1
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_arx1n"]
+animations = [{
+"frames": [{
+"duration": 10.0,
+"texture": ExtResource("1_hk0ap")
+}, {
+"duration": 0.2,
+"texture": ExtResource("2_vievv")
+}, {
+"duration": 0.2,
+"texture": ExtResource("3_40c4w")
+}, {
+"duration": 0.2,
+"texture": ExtResource("4_530wo")
+}, {
+"duration": 0.2,
+"texture": ExtResource("5_3ur0b")
+}, {
+"duration": 0.2,
+"texture": ExtResource("4_530wo")
+}, {
+"duration": 0.2,
+"texture": ExtResource("3_40c4w")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="eyes" type="Node2D"]
+script = ExtResource("1_vievv")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+material = SubResource("CanvasItemMaterial_hk0ap")
+sprite_frames = SubResource("SpriteFrames_arx1n")
+frame_progress = 0.8980761

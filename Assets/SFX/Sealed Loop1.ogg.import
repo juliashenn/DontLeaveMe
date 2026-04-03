@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://umyghcf2eg3p"
+path="res://.godot/imported/Sealed Loop1.ogg-3b042bcbefa74a5975305eea922616ce.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/SFX/Sealed Loop1.ogg"
+dest_files=["res://.godot/imported/Sealed Loop1.ogg-3b042bcbefa74a5975305eea922616ce.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

@@ -1,6 +1,7 @@
-[gd_scene load_steps=68 format=3 uid="uid://csw2ce0271w0a"]
+[gd_scene load_steps=71 format=3 uid="uid://csw2ce0271w0a"]
 
 [ext_resource type="Texture2D" uid="uid://bgjs6j70043pr" path="res://Assets/ChickenPack/SpriteSheet/ChickenIdle-Sheet.png" id="1_245eq"]
+[ext_resource type="Script" uid="uid://cecp0m64hptjm" path="res://Scripts/chicken.gd" id="1_e522a"]
 [ext_resource type="Texture2D" uid="uid://b7q73kwdo0t2x" path="res://Assets/ChickenPack/SpriteSheet/Sprite-ChickenAttack-Sheet.png" id="1_m5he0"]
 [ext_resource type="Texture2D" uid="uid://b0exwajvd77n4" path="res://Assets/ChickenPack/SpriteSheet/ChickenDie-Sheet.png" id="2_e522a"]
 [ext_resource type="Texture2D" uid="uid://7spcntynhp5q" path="res://Assets/ChickenPack/SpriteSheet/ChickenSleeping-Sheet.png" id="2_jy3mo"]
@@ -9,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://c1103vmdcsskl" path="res://Assets/ChickenPack/SpriteSheet/ChickenJumping-Sheet.png" id="6_tgrnk"]
 [ext_resource type="Texture2D" uid="uid://c5ondbcg513gc" path="res://Assets/ChickenPack/SpriteSheet/ChickenPeck-Sheet.png" id="7_ne5lb"]
 [ext_resource type="Texture2D" uid="uid://denybvlkefykn" path="res://Assets/ChickenPack/SpriteSheet/ChickenWalking.png" id="9_w7oyg"]
+[ext_resource type="AudioStream" uid="uid://gp5qys2trimw" path="res://Assets/SFX/456803__breviceps__chicken-clucking.ogg" id="11_xdtt6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kiunj"]
 atlas = ExtResource("1_m5he0")
@@ -451,16 +453,35 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_m5he0"]
-radius = 5.0
+radius = 15.033297
 
-[node name="Chicken" type="Node2D" groups=["chicken"]]
+[sub_resource type="CircleShape2D" id="CircleShape2D_e522a"]
+radius = 7.0
+
+[node name="Chicken" type="Node2D"]
+script = ExtResource("1_e522a")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1, -16)
+scale = Vector2(1.3, 1.3)
 sprite_frames = SubResource("SpriteFrames_xftuy")
 animation = &"Idle"
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." groups=["chicken"]]
+collision_layer = 4
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, 4)
+position = Vector2(0, -11)
 shape = SubResource("CircleShape2D_m5he0")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, -10)
+shape = SubResource("CircleShape2D_e522a")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_xdtt6")
+autoplay = true
+max_distance = 50.0

@@ -1,8 +1,49 @@
-[gd_resource type="Resource" script_class="DialogueResource" load_steps=2 format=3 uid="uid://bflrni8otcoou"]
+[gd_resource type="Resource" script_class="DialogueResource" load_steps=11 format=3 uid="uid://bflrni8otcoou"]
 
 [ext_resource type="Script" uid="uid://ccc6dbr3u3w68" path="res://Resources/DialogueResource.gd" id="1_7loct"]
+[ext_resource type="Script" uid="uid://c1y04o8kyakix" path="res://Resources/DialogueLine.gd" id="1_lssin"]
+
+[sub_resource type="Resource" id="Resource_iynej"]
+script = ExtResource("1_lssin")
+text = "You stayed with me again."
+metadata/_custom_type_script = "uid://c1y04o8kyakix"
+
+[sub_resource type="Resource" id="Resource_f0rm1"]
+script = ExtResource("1_lssin")
+text = "I was thinking about that."
+metadata/_custom_type_script = "uid://c1y04o8kyakix"
+
+[sub_resource type="Resource" id="Resource_chgku"]
+script = ExtResource("1_lssin")
+text = "About how you always come back to me."
+metadata/_custom_type_script = "uid://c1y04o8kyakix"
+
+[sub_resource type="Resource" id="Resource_p34yp"]
+script = ExtResource("1_lssin")
+text = "I know a place nearby."
+metadata/_custom_type_script = "uid://c1y04o8kyakix"
+
+[sub_resource type="Resource" id="Resource_ieu4e"]
+script = ExtResource("1_lssin")
+text = "With torches."
+metadata/_custom_type_script = "uid://c1y04o8kyakix"
+
+[sub_resource type="Resource" id="Resource_tfnuo"]
+script = ExtResource("1_lssin")
+text = "When they’re lit... it feels safer and quieter."
+metadata/_custom_type_script = "uid://c1y04o8kyakix"
+
+[sub_resource type="Resource" id="Resource_jp16a"]
+script = ExtResource("1_lssin")
+text = "You should stay near places like that."
+metadata/_custom_type_script = "uid://c1y04o8kyakix"
+
+[sub_resource type="Resource" id="Resource_hgtu5"]
+script = ExtResource("1_lssin")
+text = "Places where nothing can take you away."
+metadata/_custom_type_script = "uid://c1y04o8kyakix"
 
 [resource]
 script = ExtResource("1_7loct")
-lines = Array[String](["Day3", "hihi"])
+lines = Array[ExtResource("1_lssin")]([SubResource("Resource_iynej"), SubResource("Resource_f0rm1"), SubResource("Resource_chgku"), SubResource("Resource_p34yp"), SubResource("Resource_ieu4e"), SubResource("Resource_tfnuo"), SubResource("Resource_jp16a"), SubResource("Resource_hgtu5")])
 metadata/_custom_type_script = "uid://ccc6dbr3u3w68"

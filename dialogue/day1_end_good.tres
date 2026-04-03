@@ -5,28 +5,23 @@
 
 [sub_resource type="Resource" id="Resource_isn6x"]
 script = ExtResource("1_w0g7j")
-speaker = "bunny"
 text = "You brought carrots back! Thank you... really thank you so much."
-animation = "Sitting"
 metadata/_custom_type_script = "uid://c1y04o8kyakix"
 
 [sub_resource type="Resource" id="Resource_03bcn"]
 script = ExtResource("1_w0g7j")
-speaker = "bunny"
 text = "I'd knew you'd come back for me. You're a good knight."
 metadata/_custom_type_script = "uid://c1y04o8kyakix"
 
 [sub_resource type="Resource" id="Resource_o8vqy"]
 script = ExtResource("1_w0g7j")
-speaker = "bunny"
 text = "Let's rest for the day now."
 animation = "Sleeping"
 metadata/_custom_type_script = "uid://c1y04o8kyakix"
 
 [sub_resource type="Resource" id="Resource_w3cq1"]
 script = ExtResource("1_w0g7j")
-speaker = "bunny"
-text = "… You'll still be there tomorrow, right?"
+text = "...You'll still be there tomorrow, right?"
 metadata/_custom_type_script = "uid://c1y04o8kyakix"
 
 [resource]

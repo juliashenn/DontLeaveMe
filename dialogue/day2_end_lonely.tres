@@ -1,8 +1,34 @@
-[gd_resource type="Resource" script_class="DialogueResource" load_steps=3 format=3 uid="uid://byp641a8u63gd"]
+[gd_resource type="Resource" script_class="DialogueResource" load_steps=8 format=3 uid="uid://byp641a8u63gd"]
 
 [ext_resource type="Script" uid="uid://c1y04o8kyakix" path="res://Resources/DialogueLine.gd" id="1_40k35"]
 [ext_resource type="Script" uid="uid://ccc6dbr3u3w68" path="res://Resources/DialogueResource.gd" id="2_hvfq5"]
 
+[sub_resource type="Resource" id="Resource_40k35"]
+script = ExtResource("1_40k35")
+text = "You didn’t come back."
+metadata/_custom_type_script = "uid://c1y04o8kyakix"
+
+[sub_resource type="Resource" id="Resource_hvfq5"]
+script = ExtResource("1_40k35")
+text = "I tried to ignore it, but it kept getting worse."
+metadata/_custom_type_script = "uid://c1y04o8kyakix"
+
+[sub_resource type="Resource" id="Resource_afmg5"]
+script = ExtResource("1_40k35")
+text = "That empty feeling."
+metadata/_custom_type_script = "uid://c1y04o8kyakix"
+
+[sub_resource type="Resource" id="Resource_tqq5w"]
+script = ExtResource("1_40k35")
+text = "It’s different when you’re not here."
+metadata/_custom_type_script = "uid://c1y04o8kyakix"
+
+[sub_resource type="Resource" id="Resource_l7wrx"]
+script = ExtResource("1_40k35")
+text = "Please don’t make me wait like that again."
+metadata/_custom_type_script = "uid://c1y04o8kyakix"
+
 [resource]
 script = ExtResource("2_hvfq5")
+lines = Array[ExtResource("1_40k35")]([SubResource("Resource_40k35"), SubResource("Resource_hvfq5"), SubResource("Resource_afmg5"), SubResource("Resource_tqq5w"), SubResource("Resource_l7wrx")])
 metadata/_custom_type_script = "uid://ccc6dbr3u3w68"

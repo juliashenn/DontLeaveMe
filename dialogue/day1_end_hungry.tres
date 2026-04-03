@@ -5,38 +5,31 @@
 
 [sub_resource type="Resource" id="Resource_35xvq"]
 script = ExtResource("1_4ykff")
-speaker = "bunny"
-text = "You're back… good. "
-animation = "Sitting"
+text = "You're back... good. "
 metadata/_custom_type_script = "uid://c1y04o8kyakix"
 
 [sub_resource type="Resource" id="Resource_4ykff"]
 script = ExtResource("1_4ykff")
-speaker = "bunny"
-text = "But the carrots? You forgot about the carrots…"
+text = "But the carrots? You forgot about the carrots..."
 metadata/_custom_type_script = "uid://c1y04o8kyakix"
 
 [sub_resource type="Resource" id="Resource_mdj1g"]
 script = ExtResource("1_4ykff")
-speaker = "bunny"
 text = "It's only the first day, so I forgive you. "
 metadata/_custom_type_script = "uid://c1y04o8kyakix"
 
 [sub_resource type="Resource" id="Resource_3foc3"]
 script = ExtResource("1_4ykff")
-speaker = "bunny"
 text = "But tomorrow I'll be much hungrier."
 metadata/_custom_type_script = "uid://c1y04o8kyakix"
 
 [sub_resource type="Resource" id="Resource_on0et"]
 script = ExtResource("1_4ykff")
-speaker = "bunny"
 text = "I wonder what else there is to eat."
 metadata/_custom_type_script = "uid://c1y04o8kyakix"
 
 [sub_resource type="Resource" id="Resource_eryij"]
 script = ExtResource("1_4ykff")
-speaker = "bunny"
 text = "Let's sleep now."
 animation = "Sleeping"
 metadata/_custom_type_script = "uid://c1y04o8kyakix"

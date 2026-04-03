@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="DialogueResource" load_steps=6 format=3 uid="uid://dehn61sve4ul1"]
+
+[ext_resource type="Script" uid="uid://c1y04o8kyakix" path="res://Resources/DialogueLine.gd" id="1_q4onk"]
+[ext_resource type="Script" uid="uid://ccc6dbr3u3w68" path="res://Resources/DialogueResource.gd" id="2_2aurx"]
+
+[sub_resource type="Resource" id="Resource_q4onk"]
+script = ExtResource("1_q4onk")
+text = "You came back."
+metadata/_custom_type_script = "uid://c1y04o8kyakix"
+
+[sub_resource type="Resource" id="Resource_2aurx"]
+script = ExtResource("1_q4onk")
+text = "It feels calmer when you’re here."
+metadata/_custom_type_script = "uid://c1y04o8kyakix"
+
+[sub_resource type="Resource" id="Resource_8488e"]
+script = ExtResource("1_q4onk")
+text = "Like nothing can reach us."
+metadata/_custom_type_script = "uid://c1y04o8kyakix"
+
+[resource]
+script = ExtResource("2_2aurx")
+lines = Array[ExtResource("1_q4onk")]([SubResource("Resource_q4onk"), SubResource("Resource_2aurx"), SubResource("Resource_8488e")])
+metadata/_custom_type_script = "uid://ccc6dbr3u3w68"

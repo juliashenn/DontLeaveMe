@@ -1,8 +1,29 @@
-[gd_resource type="Resource" script_class="DialogueResource" load_steps=3 format=3 uid="uid://bfrhr6u1plbd6"]
+[gd_resource type="Resource" script_class="DialogueResource" load_steps=7 format=3 uid="uid://bfrhr6u1plbd6"]
 
 [ext_resource type="Script" uid="uid://c1y04o8kyakix" path="res://Resources/DialogueLine.gd" id="1_seu5x"]
 [ext_resource type="Script" uid="uid://ccc6dbr3u3w68" path="res://Resources/DialogueResource.gd" id="2_p0wi0"]
 
+[sub_resource type="Resource" id="Resource_seu5x"]
+script = ExtResource("1_seu5x")
+text = "You came back, but... this isn’t enough."
+metadata/_custom_type_script = "uid://c1y04o8kyakix"
+
+[sub_resource type="Resource" id="Resource_p0wi0"]
+script = ExtResource("1_seu5x")
+text = "I still feel hungry."
+metadata/_custom_type_script = "uid://c1y04o8kyakix"
+
+[sub_resource type="Resource" id="Resource_3tbui"]
+script = ExtResource("1_seu5x")
+text = "It’s okay."
+metadata/_custom_type_script = "uid://c1y04o8kyakix"
+
+[sub_resource type="Resource" id="Resource_m0rx5"]
+script = ExtResource("1_seu5x")
+text = "Just bring all of them next time."
+metadata/_custom_type_script = "uid://c1y04o8kyakix"
+
 [resource]
 script = ExtResource("2_p0wi0")
+lines = Array[ExtResource("1_seu5x")]([SubResource("Resource_seu5x"), SubResource("Resource_p0wi0"), SubResource("Resource_3tbui"), SubResource("Resource_m0rx5")])
 metadata/_custom_type_script = "uid://ccc6dbr3u3w68"

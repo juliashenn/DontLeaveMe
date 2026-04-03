@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dc08ducaadyrh"
+path="res://.godot/imported/Sayuri Loop1_01.ogg-b5e0ae35ba3ecd825834d90ca7e9ae14.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/SFX/Sayuri Loop1_01.ogg"
+dest_files=["res://.godot/imported/Sayuri Loop1_01.ogg-b5e0ae35ba3ecd825834d90ca7e9ae14.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,73 @@
+[gd_scene load_steps=8 format=3 uid="uid://d8tkc44rd26h"]
+
+[ext_resource type="PackedScene" uid="uid://h44x4vrm7p8r" path="res://Scenes/torch.tscn" id="1_5wcao"]
+[ext_resource type="Script" uid="uid://cgfelx50ywywy" path="res://Scripts/day_3_torch_puzzle.gd" id="1_8qmhr"]
+[ext_resource type="Texture2D" uid="uid://bfv2ccr6s4xgd" path="res://Assets/egg.png" id="4_i5hiw"]
+[ext_resource type="PackedScene" uid="uid://dgyimih7ptm6m" path="res://Scenes/carrot.tscn" id="5_4jhl1"]
+[ext_resource type="Texture2D" uid="uid://bkvio8v8mkmsx" path="res://Assets/Rabbit_sheet.png" id="5_35s54"]
+[ext_resource type="PackedScene" uid="uid://jnip1by277tv" path="res://Scenes/flame.tscn" id="6_35s54"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_obq6c"]
+atlas = ExtResource("5_35s54")
+region = Rect2(0, 128, 48, 64)
+
+[node name="Day3TorchPuzzle" type="Node2D"]
+script = ExtResource("1_8qmhr")
+
+[node name="Egg" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-7.9999847, 14.5)
+scale = Vector2(37.625, 19.6875)
+texture = ExtResource("4_i5hiw")
+
+[node name="Torch4" parent="." instance=ExtResource("1_5wcao")]
+texture_filter = 2
+position = Vector2(0, -72)
+
+[node name="Torch2" parent="." instance=ExtResource("1_5wcao")]
+texture_filter = 2
+position = Vector2(151, 5)
+color = "Blue"
+
+[node name="Torch" parent="." instance=ExtResource("1_5wcao")]
+texture_filter = 2
+position = Vector2(-154, 4)
+color = "Purple"
+
+[node name="Torch3" parent="." instance=ExtResource("1_5wcao")]
+texture_filter = 2
+position = Vector2(-1, 80)
+color = "Green"
+
+[node name="Carrot" type="Node2D" parent="."]
+position = Vector2(-41, 0)
+scale = Vector2(1.5, 1.5)
+
+[node name="Carrot" parent="Carrot" instance=ExtResource("5_4jhl1")]
+scale = Vector2(1, 1)
+
+[node name="Carrot2" parent="Carrot" instance=ExtResource("5_4jhl1")]
+position = Vector2(12, 22)
+scale = Vector2(1, 1)
+
+[node name="Carrot3" parent="Carrot" instance=ExtResource("5_4jhl1")]
+position = Vector2(-18.666668, 21.333334)
+scale = Vector2(1, 1)
+
+[node name="Flame" parent="." instance=ExtResource("6_35s54")]
+position = Vector2(-9.5625, 8)
+scale = Vector2(1.3886719, 1.2499999)
+flicker_strength = 0.0
+energy_base = 0.4
+energy_variation = 0.0
+base_color = Color(0.99366266, 0.7297942, 0.74600106, 1)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -27.0
+offset_top = -40.0
+offset_right = 38.0
+offset_bottom = 28.0
+texture = SubResource("AtlasTexture_obq6c")
+expand_mode = 3
+stretch_mode = 5
+flip_h = true

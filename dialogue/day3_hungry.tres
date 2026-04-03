@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="DialogueResource" load_steps=6 format=3 uid="uid://cyocfpif7ggud"]
+
+[ext_resource type="Script" uid="uid://c1y04o8kyakix" path="res://Resources/DialogueLine.gd" id="1_0tlp2"]
+[ext_resource type="Script" uid="uid://ccc6dbr3u3w68" path="res://Resources/DialogueResource.gd" id="2_3gk7d"]
+
+[sub_resource type="Resource" id="Resource_0tlp2"]
+script = ExtResource("1_0tlp2")
+text = "It’s getting darker."
+metadata/_custom_type_script = "uid://c1y04o8kyakix"
+
+[sub_resource type="Resource" id="Resource_3gk7d"]
+script = ExtResource("1_0tlp2")
+text = "You should already be on your way back."
+metadata/_custom_type_script = "uid://c1y04o8kyakix"
+
+[sub_resource type="Resource" id="Resource_eayeu"]
+script = ExtResource("1_0tlp2")
+text = "I don’t like not knowing where you are."
+metadata/_custom_type_script = "uid://c1y04o8kyakix"
+
+[resource]
+script = ExtResource("2_3gk7d")
+lines = Array[ExtResource("1_0tlp2")]([SubResource("Resource_0tlp2"), SubResource("Resource_3gk7d"), SubResource("Resource_eayeu")])
+metadata/_custom_type_script = "uid://ccc6dbr3u3w68"

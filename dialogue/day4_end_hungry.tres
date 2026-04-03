@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="DialogueResource" load_steps=7 format=3 uid="uid://bl8bic2l3qowy"]
+
+[ext_resource type="Script" uid="uid://c1y04o8kyakix" path="res://Resources/DialogueLine.gd" id="1_7afrl"]
+[ext_resource type="Script" uid="uid://ccc6dbr3u3w68" path="res://Resources/DialogueResource.gd" id="2_v1hec"]
+
+[sub_resource type="Resource" id="Resource_7afrl"]
+script = ExtResource("1_7afrl")
+text = "You didn’t bring enough."
+metadata/_custom_type_script = "uid://c1y04o8kyakix"
+
+[sub_resource type="Resource" id="Resource_v1hec"]
+script = ExtResource("1_7afrl")
+text = "After I told you what to do."
+metadata/_custom_type_script = "uid://c1y04o8kyakix"
+
+[sub_resource type="Resource" id="Resource_1mngr"]
+script = ExtResource("1_7afrl")
+text = "I needed you to do this for me."
+metadata/_custom_type_script = "uid://c1y04o8kyakix"
+
+[sub_resource type="Resource" id="Resource_hs8fg"]
+script = ExtResource("1_7afrl")
+text = "You understand that, right?"
+metadata/_custom_type_script = "uid://c1y04o8kyakix"
+
+[resource]
+script = ExtResource("2_v1hec")
+lines = Array[ExtResource("1_7afrl")]([SubResource("Resource_7afrl"), SubResource("Resource_v1hec"), SubResource("Resource_1mngr"), SubResource("Resource_hs8fg")])
+metadata/_custom_type_script = "uid://ccc6dbr3u3w68"

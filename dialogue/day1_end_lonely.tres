@@ -5,7 +5,7 @@
 
 [sub_resource type="Resource" id="Resource_7m74p"]
 script = ExtResource("1_7m74p")
-text = "You didn't come back…"
+text = "You didn't come back..."
 metadata/_custom_type_script = "uid://c1y04o8kyakix"
 
 [sub_resource type="Resource" id="Resource_j3ryt"]
@@ -20,12 +20,12 @@ metadata/_custom_type_script = "uid://c1y04o8kyakix"
 
 [sub_resource type="Resource" id="Resource_toqoh"]
 script = ExtResource("1_7m74p")
-text = "There are …things out there. I don't like them."
+text = "There are ...things out there. I don't like them."
 metadata/_custom_type_script = "uid://c1y04o8kyakix"
 
 [sub_resource type="Resource" id="Resource_er801"]
 script = ExtResource("1_7m74p")
-text = "… What if something took you?"
+text = "...What if something took you?"
 metadata/_custom_type_script = "uid://c1y04o8kyakix"
 
 [sub_resource type="Resource" id="Resource_v88p5"]
@@ -35,7 +35,7 @@ metadata/_custom_type_script = "uid://c1y04o8kyakix"
 
 [sub_resource type="Resource" id="Resource_badds"]
 script = ExtResource("1_7m74p")
-text = "But don’t do that again… Please"
+text = "But don’t do that again... Please"
 metadata/_custom_type_script = "uid://c1y04o8kyakix"
 
 [resource]

@@ -1,0 +1,44 @@
+[gd_resource type="Resource" script_class="DialogueResource" load_steps=10 format=3 uid="uid://d0gtsjdwj3uf2"]
+
+[ext_resource type="Script" uid="uid://c1y04o8kyakix" path="res://Resources/DialogueLine.gd" id="1_hogax"]
+[ext_resource type="Script" uid="uid://ccc6dbr3u3w68" path="res://Resources/DialogueResource.gd" id="2_ywcf0"]
+
+[sub_resource type="Resource" id="Resource_hogax"]
+script = ExtResource("1_hogax")
+text = "You’re still here!"
+metadata/_custom_type_script = "uid://c1y04o8kyakix"
+
+[sub_resource type="Resource" id="Resource_ywcf0"]
+script = ExtResource("1_hogax")
+text = "Good."
+metadata/_custom_type_script = "uid://c1y04o8kyakix"
+
+[sub_resource type="Resource" id="Resource_q48im"]
+script = ExtResource("1_hogax")
+text = "I heard something near the water."
+metadata/_custom_type_script = "uid://c1y04o8kyakix"
+
+[sub_resource type="Resource" id="Resource_s8e3d"]
+script = ExtResource("1_hogax")
+text = "It didn’t sound right."
+metadata/_custom_type_script = "uid://c1y04o8kyakix"
+
+[sub_resource type="Resource" id="Resource_xeafv"]
+script = ExtResource("1_hogax")
+text = "If you go that way... be careful."
+metadata/_custom_type_script = "uid://c1y04o8kyakix"
+
+[sub_resource type="Resource" id="Resource_fuueo"]
+script = ExtResource("1_hogax")
+text = "Don’t get caught."
+metadata/_custom_type_script = "uid://c1y04o8kyakix"
+
+[sub_resource type="Resource" id="Resource_n5osf"]
+script = ExtResource("1_hogax")
+text = "You have to come back."
+metadata/_custom_type_script = "uid://c1y04o8kyakix"
+
+[resource]
+script = ExtResource("2_ywcf0")
+lines = Array[ExtResource("1_hogax")]([SubResource("Resource_hogax"), SubResource("Resource_ywcf0"), SubResource("Resource_q48im"), SubResource("Resource_s8e3d"), SubResource("Resource_xeafv"), SubResource("Resource_fuueo"), SubResource("Resource_n5osf")])
+metadata/_custom_type_script = "uid://ccc6dbr3u3w68"

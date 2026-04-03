@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://w73o327gd0yu"
+path="res://.godot/imported/Comfort Loop1.ogg-c34a1dbe6e4561469c0e8e544b8ec890.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/SFX/Comfort Loop1.ogg"
+dest_files=["res://.godot/imported/Comfort Loop1.ogg-c34a1dbe6e4561469c0e8e544b8ec890.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

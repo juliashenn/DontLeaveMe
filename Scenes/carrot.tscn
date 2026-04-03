@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dgyimih7ptm6m"]
+[gd_scene load_steps=12 format=3 uid="uid://dgyimih7ptm6m"]
 
 [ext_resource type="Script" uid="uid://btng5ac7bfpxc" path="res://Scripts/carrot.gd" id="1_lk8jr"]
 [ext_resource type="Texture2D" uid="uid://ceexwhxng8dy7" path="res://Assets/Carott/sprite_carotte0.png" id="1_papeb"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://cxmv2k5h87qp8" path="res://Assets/Carott/sprite_carotte4.png" id="5_oqq4l"]
 [ext_resource type="PackedScene" uid="uid://jnip1by277tv" path="res://Scenes/flame.tscn" id="7_3bqgx"]
 [ext_resource type="PackedScene" uid="uid://oqkdvla33dp4" path="res://Scenes/interactable.tscn" id="7_r3d11"]
+[ext_resource type="AudioStream" uid="uid://ciwyfxjhvlhd7" path="res://Assets/SFX/825424__sinny__dry-bush-03.mp3" id="9_oqq4l"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ni15g"]
 animations = [{
@@ -56,3 +57,7 @@ interact_name = "E to Pick Up"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable"]
 shape = SubResource("CircleShape2D_3bqgx")
+
+[node name="click" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_oqq4l")
+volume_db = -10.0

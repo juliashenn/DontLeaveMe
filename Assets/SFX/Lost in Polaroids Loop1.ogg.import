@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://c5vt1ltdks6hx"
+path="res://.godot/imported/Lost in Polaroids Loop1.ogg-992be9708bf4a01972209c7b19601605.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/SFX/Lost in Polaroids Loop1.ogg"
+dest_files=["res://.godot/imported/Lost in Polaroids Loop1.ogg-992be9708bf4a01972209c7b19601605.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://b7xgmsl8x7w8f"]
+[gd_scene load_steps=7 format=3 uid="uid://b7xgmsl8x7w8f"]
 
 [ext_resource type="Texture2D" uid="uid://jpvj70tb8q1m" path="res://Assets/eggBrown.png" id="1_1iuog"]
 [ext_resource type="Script" uid="uid://bwxau4gq6cu2t" path="res://Scripts/egg.gd" id="1_io5x2"]
 [ext_resource type="PackedScene" uid="uid://oqkdvla33dp4" path="res://Scenes/interactable.tscn" id="2_85tk0"]
 [ext_resource type="PackedScene" uid="uid://jnip1by277tv" path="res://Scenes/flame.tscn" id="4_y3rox"]
+[ext_resource type="AudioStream" uid="uid://n30gspecwfd5" path="res://Assets/SFX/202313__7778__click-2.mp3" id="5_y3rox"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_io5x2"]
 radius = 15.0
@@ -16,11 +17,17 @@ script = ExtResource("1_io5x2")
 texture = ExtResource("1_1iuog")
 
 [node name="Interactable" parent="." instance=ExtResource("2_85tk0")]
+interact_name = "E to Pick Up"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable"]
 shape = SubResource("CircleShape2D_io5x2")
 
 [node name="Flame" parent="." instance=ExtResource("4_y3rox")]
+scale = Vector2(0.5, 0.5)
 flicker_strength = 0.0
 energy_base = 0.1
 energy_variation = 0.0
+
+[node name="click" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_y3rox")
+volume_db = -10.0

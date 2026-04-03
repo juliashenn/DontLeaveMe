@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cmhsvohovot4r"
+path="res://.godot/imported/Silent Voices Loop1.ogg-afc2c1246561a5a4b47e2f8f97c2b0fb.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/SFX/Silent Voices Loop1.ogg"
+dest_files=["res://.godot/imported/Silent Voices Loop1.ogg-afc2c1246561a5a4b47e2f8f97c2b0fb.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

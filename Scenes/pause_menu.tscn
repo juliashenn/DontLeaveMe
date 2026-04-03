@@ -1,7 +1,8 @@
-[gd_scene load_steps=20 format=3 uid="uid://11y48wr1s7uw"]
+[gd_scene load_steps=25 format=3 uid="uid://11y48wr1s7uw"]
 
 [ext_resource type="Script" uid="uid://bakrbb6feib2f" path="res://Scripts/pause_menu.gd" id="1_emv3i"]
 [ext_resource type="Texture2D" uid="uid://dwb40aehhbk4k" path="res://Assets/map.png" id="2_1och7"]
+[ext_resource type="FontFile" uid="uid://5xphnau42jqr" path="res://Assets/vonwaon-bitmap.ttf/VonwaonBitmap-16px.ttf" id="2_bpi0q"]
 [ext_resource type="Texture2D" uid="uid://2uxd7xnffgsh" path="res://Assets/Freebuttons/freebuttons2.png" id="3_bpi0q"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0fi7f"]
@@ -46,6 +47,10 @@ bg_color = Color(0.5803922, 0.19215687, 0.19607843, 0.88235295)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_524vl"]
 bg_color = Color(0.49803922, 0.23921569, 0.23921569, 0.88235295)
 
+[sub_resource type="LabelSettings" id="LabelSettings_vmyb1"]
+font = ExtResource("2_bpi0q")
+font_size = 24
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k0w1u"]
 bg_color = Color(1, 1, 1, 1)
 border_width_left = 3
@@ -71,6 +76,21 @@ region = Rect2(0, 32, 16, 16)
 [sub_resource type="AtlasTexture" id="AtlasTexture_myy0f"]
 atlas = ExtResource("3_bpi0q")
 region = Rect2(16, 32, 16, 16)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uscpe"]
+bg_color = Color(0.5802685, 0.1931151, 0.19641912, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="LabelSettings" id="LabelSettings_1och7"]
+font = ExtResource("2_bpi0q")
+font_size = 36
+
+[sub_resource type="LabelSettings" id="LabelSettings_myy0f"]
+font = ExtResource("2_bpi0q")
+font_size = 24
 
 [node name="PauseMenu" type="Control"]
 layout_mode = 3
@@ -121,6 +141,8 @@ custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 focus_mode = 0
+theme_override_fonts/font = ExtResource("2_bpi0q")
+theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_emv3i")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_u8tnp")
 theme_override_styles/hover = SubResource("StyleBoxFlat_stj27")
@@ -131,6 +153,8 @@ custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 focus_mode = 0
+theme_override_fonts/font = ExtResource("2_bpi0q")
+theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_emv3i")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_u8tnp")
 theme_override_styles/hover = SubResource("StyleBoxFlat_stj27")
@@ -142,6 +166,8 @@ custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 focus_mode = 0
+theme_override_fonts/font = ExtResource("2_bpi0q")
+theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_vmyb1")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_myy0f")
 theme_override_styles/hover = SubResource("StyleBoxFlat_sjs17")
@@ -152,6 +178,8 @@ custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 focus_mode = 0
+theme_override_fonts/font = ExtResource("2_bpi0q")
+theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_y2c35")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_ix48p")
 theme_override_styles/hover = SubResource("StyleBoxFlat_524vl")
@@ -166,6 +194,7 @@ alignment = 1
 [node name="VolumeLabel" type="Label" parent="Panel/VBoxContainer/Volume"]
 layout_mode = 2
 text = "Volume:"
+label_settings = SubResource("LabelSettings_vmyb1")
 
 [node name="HSlider" type="HSlider" parent="Panel/VBoxContainer/Volume"]
 custom_minimum_size = Vector2(100, 25)
@@ -174,11 +203,14 @@ focus_mode = 0
 theme_override_styles/slider = SubResource("StyleBoxFlat_k0w1u")
 theme_override_styles/grabber_area = SubResource("StyleBoxFlat_1och7")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_bpi0q")
-value = 100.0
+max_value = 1.0
+step = 0.01
+value = 1.0
 tick_count = 10
 ticks_position = 3
 
 [node name="Map" type="TextureRect" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.29900002
@@ -212,9 +244,145 @@ texture_normal = SubResource("AtlasTexture_vmyb1")
 texture_pressed = SubResource("AtlasTexture_myy0f")
 stretch_mode = 5
 
+[node name="Credits" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.47300002
+anchor_right = 0.47300002
+anchor_bottom = 1.0
+offset_left = -147.896
+offset_top = 98.0
+offset_right = 178.104
+offset_bottom = -139.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_uscpe")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Credits"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 26.0
+offset_right = 28.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Credits/ScrollContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="Credits/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "Credits"
+label_settings = SubResource("LabelSettings_1och7")
+
+[node name="RichTextLabel" type="Label" parent="Credits/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_vertical = 3
+text = "Moon Tileset Isometric
+By: RusKom
+https://ruskom.itch.io/
+
+Lonely Nightmare Soundtrack
+By: Crow Shade
+https://crowshade.itch.io/
+
+32x32 Isometric Tiles
+By: scrabling
+https://scrabling.itch.io/pixel-isometric-tiles
+
+Isometric Water Tile
+By: MaelleMarylloup
+https://maellemarylloup.itch.io/
+
+Bunny Animations
+By: ToffeeCraft
+https://toffeecraft.itch.io/
+
+Rabbit Cultist
+By: CursedLake
+https://cursedlake.itch.io/
+
+8D Knight 
+By: SmallScaleInt
+https://smallscaleint.itch.io/
+
+Torches 
+By: PixLeroy
+https://pixleroy.itch.io/
+
+Chicken
+By: vmiinv
+https://vmiinv.itch.io/
+
+Carrot
+By: Lysdora
+https://lysdora.itch.io/
+
+Blood Splatter 
+By: Blue Rose Sonata 
+https://bluerosesonata.itch.io/
+
+UI
+By: ToffeeCraft
+https://toffeecraft.itch.io/
+
+Footsteps 
+By: nebula audio
+https://nebula-audio.itch.io/
+
+Font, Vonwaon Bitmap
+By: Haoyu Qiu
+https://timothyqiu.itch.io/
+
+Sound Effects Found on Freesound:
+
+Underwater / Breathing by ryanconway -- https://freesound.org/s/183893/ -- License: Attribution 4.0
+
+markedio_thumping_02052019.wav by markedio -- https://freesound.org/s/458642/ -- License: Creative Commons 0
+
+Chicken clucking by Breviceps -- https://freesound.org/s/456803/ -- License: Creative Commons 0
+
+Water_Footsteps.wav by D001447733 -- https://freesound.org/s/464610/ -- License: Attribution 3.0
+
+Fire Crackling Sound by ShannonAHoniball -- https://freesound.org/s/363136/ -- License: Attribution NonCommercial 3.0
+
+breath3.flac by saha213131 -- https://freesound.org/s/680766/ -- License: Attribution 4.0
+
+Howling wind ambience.wav by Darklitstudio -- https://freesound.org/s/701354/ -- License: Attribution NonCommercial 4.0
+
+Spooky Wind by oneOddEgg -- https://freesound.org/s/395374/ -- License: Creative Commons 0
+
+blip 2.aif by tim.kahn -- https://freesound.org/s/15405/ -- License: Attribution 4.0
+
+Writing_Pen_01.wav by moai15 -- https://freesound.org/s/336382/ -- License: Creative Commons 0
+
+Click (2).mp3 by 7778 -- https://freesound.org/s/202313/ -- License: Creative Commons 0"
+label_settings = SubResource("LabelSettings_myy0f")
+autowrap_mode = 3
+
+[node name="CreditClose" type="TextureButton" parent="Credits"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.96500003
+anchor_top = -0.004
+anchor_right = 0.96500003
+anchor_bottom = -0.004
+offset_left = -25.589996
+offset_top = -27.355999
+offset_right = 31.410004
+offset_bottom = 33.644
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = SubResource("AtlasTexture_vmyb1")
+texture_pressed = SubResource("AtlasTexture_myy0f")
+stretch_mode = 5
+
 [connection signal="pressed" from="Panel/VBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
 [connection signal="pressed" from="Panel/VBoxContainer/MapButton" to="." method="_on_map_button_pressed"]
 [connection signal="pressed" from="Panel/VBoxContainer/CreditsButton" to="." method="_on_credits_button_pressed"]
 [connection signal="pressed" from="Panel/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
 [connection signal="drag_ended" from="Panel/VBoxContainer/Volume/HSlider" to="." method="_on_h_slider_drag_ended"]
 [connection signal="pressed" from="Map/TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="Credits/CreditClose" to="." method="_on_credit_close_pressed"]

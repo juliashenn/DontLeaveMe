@@ -1,0 +1,52 @@
+[gd_resource type="Resource" script_class="DialogueResource" load_steps=11 format=3 uid="uid://cu6cuwvg6ib4i"]
+
+[ext_resource type="Script" uid="uid://c1y04o8kyakix" path="res://Resources/DialogueLine.gd" id="1_ay1dd"]
+[ext_resource type="Script" uid="uid://ccc6dbr3u3w68" path="res://Resources/DialogueResource.gd" id="2_j8rcg"]
+
+[sub_resource type="Resource" id="Resource_6ji6n"]
+script = ExtResource("1_ay1dd")
+text = "You didn’t come back."
+metadata/_custom_type_script = "uid://c1y04o8kyakix"
+
+[sub_resource type="Resource" id="Resource_66bll"]
+script = ExtResource("1_ay1dd")
+text = "Why didn’t you come back?"
+metadata/_custom_type_script = "uid://c1y04o8kyakix"
+
+[sub_resource type="Resource" id="Resource_c2d23"]
+script = ExtResource("1_ay1dd")
+text = "Did you finally decide you had enough of me?"
+metadata/_custom_type_script = "uid://c1y04o8kyakix"
+
+[sub_resource type="Resource" id="Resource_pngaw"]
+script = ExtResource("1_ay1dd")
+text = "Then why did you bother taking care of me?"
+metadata/_custom_type_script = "uid://c1y04o8kyakix"
+
+[sub_resource type="Resource" id="Resource_wsso0"]
+script = ExtResource("1_ay1dd")
+text = "You said you’d stay with me."
+metadata/_custom_type_script = "uid://c1y04o8kyakix"
+
+[sub_resource type="Resource" id="Resource_u58tj"]
+script = ExtResource("1_ay1dd")
+text = "You don’t get to take that back."
+animation = "Buff"
+metadata/_custom_type_script = "uid://c1y04o8kyakix"
+
+[sub_resource type="Resource" id="Resource_83f5u"]
+script = ExtResource("1_ay1dd")
+text = "So you’re going to stay."
+animation = ""
+metadata/_custom_type_script = "uid://c1y04o8kyakix"
+
+[sub_resource type="Resource" id="Resource_3owwg"]
+script = ExtResource("1_ay1dd")
+text = "Forever."
+animation = "BuffEat"
+metadata/_custom_type_script = "uid://c1y04o8kyakix"
+
+[resource]
+script = ExtResource("2_j8rcg")
+lines = Array[ExtResource("1_ay1dd")]([SubResource("Resource_6ji6n"), SubResource("Resource_66bll"), SubResource("Resource_c2d23"), SubResource("Resource_pngaw"), SubResource("Resource_wsso0"), SubResource("Resource_u58tj"), SubResource("Resource_83f5u"), SubResource("Resource_3owwg")])
+metadata/_custom_type_script = "uid://ccc6dbr3u3w68"

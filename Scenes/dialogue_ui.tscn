@@ -1,12 +1,16 @@
-[gd_scene load_steps=9 format=3 uid="uid://dy8q7npgyl160"]
+[gd_scene load_steps=13 format=3 uid="uid://dy8q7npgyl160"]
 
 [ext_resource type="Script" uid="uid://e2fwxgcybxg" path="res://Scripts/dialogue_ui.gd" id="1_q8n66"]
 [ext_resource type="Texture2D" uid="uid://ceoxrfmcbhknd" path="res://Assets/32PixelBunny/PNG/BunnySitting-Sheet.png" id="2_gsrxu"]
 [ext_resource type="Texture2D" uid="uid://dwb40aehhbk4k" path="res://Assets/map.png" id="3_3gjcu"]
 [ext_resource type="Texture2D" uid="uid://c6h62xrv8n42x" path="res://Assets/2D HD Character Knight/Spritesheets/With shadows/Idle.png" id="4_ethgc"]
+[ext_resource type="Texture2D" uid="uid://nsosllcx5k8" path="res://Assets/eyes.png" id="5_xl4hb"]
+[ext_resource type="AudioStream" uid="uid://cx0mrf8g64l0v" path="res://Assets/SFX/336382__moai15__writing_pen_01.ogg" id="7_84eoy"]
+[ext_resource type="FontFile" uid="uid://5xphnau42jqr" path="res://Assets/vonwaon-bitmap.ttf/VonwaonBitmap-16px.ttf" id="7_coevy"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_q8n66"]
-font_size = 36
+font = ExtResource("7_coevy")
+font_size = 42
 font_color = Color(1, 0.83, 0.83, 1)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3gjcu"]
@@ -18,7 +22,13 @@ atlas = ExtResource("4_ethgc")
 region = Rect2(32, 172, 64, 64)
 
 [sub_resource type="LabelSettings" id="LabelSettings_ethgc"]
+font = ExtResource("7_coevy")
 font_size = 36
+
+[sub_resource type="LabelSettings" id="LabelSettings_84eoy"]
+font = ExtResource("7_coevy")
+font_size = 32
+font_color = Color(1, 1, 1, 0.59300005)
 
 [node name="DialogueUI" type="CanvasLayer"]
 script = ExtResource("1_q8n66")
@@ -52,7 +62,7 @@ expand_mode = 1
 stretch_mode = 5
 
 [node name="Panel" type="Panel" parent="."]
-anchors_preset = -1
+anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -101,11 +111,38 @@ texture = SubResource("AtlasTexture_xl4hb")
 expand_mode = 1
 stretch_mode = 5
 
+[node name="MonsterPortrait" type="TextureRect" parent="Panel/Portrait"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 26.0
+offset_right = 138.0
+offset_bottom = 165.0
+texture = ExtResource("5_xl4hb")
+
 [node name="SpeakerName" type="Label" parent="Panel"]
 layout_mode = 0
-offset_left = 129.0
-offset_top = -44.0
-offset_right = 376.0
-offset_bottom = 6.0
+offset_left = 128.0
+offset_top = -38.0
+offset_right = 380.0
+offset_bottom = 12.0
 text = "Injured Rabbit"
 label_settings = SubResource("LabelSettings_ethgc")
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -477.0
+offset_top = -46.0
+offset_right = -13.0
+offset_bottom = -14.0
+text = "Press/Enter/Space to Continue"
+label_settings = SubResource("LabelSettings_84eoy")
+horizontal_alignment = 2
+
+[node name="writing" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_84eoy")
+volume_db = 10.0

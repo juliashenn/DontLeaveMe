@@ -1,0 +1,44 @@
+[gd_resource type="Resource" script_class="DialogueResource" load_steps=10 format=3 uid="uid://s3jfg0v4qpfn"]
+
+[ext_resource type="Script" uid="uid://c1y04o8kyakix" path="res://Resources/DialogueLine.gd" id="1_5qpbb"]
+[ext_resource type="Script" uid="uid://ccc6dbr3u3w68" path="res://Resources/DialogueResource.gd" id="2_smaqm"]
+
+[sub_resource type="Resource" id="Resource_5qpbb"]
+script = ExtResource("1_5qpbb")
+text = "You didn’t come back."
+metadata/_custom_type_script = "uid://c1y04o8kyakix"
+
+[sub_resource type="Resource" id="Resource_smaqm"]
+script = ExtResource("1_5qpbb")
+text = "I kept thinking about the water."
+metadata/_custom_type_script = "uid://c1y04o8kyakix"
+
+[sub_resource type="Resource" id="Resource_y4p5a"]
+script = ExtResource("1_5qpbb")
+text = "About something taking you."
+metadata/_custom_type_script = "uid://c1y04o8kyakix"
+
+[sub_resource type="Resource" id="Resource_fmohf"]
+script = ExtResource("1_5qpbb")
+text = "...or you not wanting to come back."
+metadata/_custom_type_script = "uid://c1y04o8kyakix"
+
+[sub_resource type="Resource" id="Resource_du5bh"]
+script = ExtResource("1_5qpbb")
+text = "That thought wouldn’t go away."
+metadata/_custom_type_script = "uid://c1y04o8kyakix"
+
+[sub_resource type="Resource" id="Resource_f4lax"]
+script = ExtResource("1_5qpbb")
+text = "Why would you hurt me like this."
+metadata/_custom_type_script = "uid://c1y04o8kyakix"
+
+[sub_resource type="Resource" id="Resource_k5xa1"]
+script = ExtResource("1_5qpbb")
+text = "I was waiting for you."
+metadata/_custom_type_script = "uid://c1y04o8kyakix"
+
+[resource]
+script = ExtResource("2_smaqm")
+lines = Array[ExtResource("1_5qpbb")]([SubResource("Resource_5qpbb"), SubResource("Resource_smaqm"), SubResource("Resource_y4p5a"), SubResource("Resource_fmohf"), SubResource("Resource_du5bh"), SubResource("Resource_f4lax"), SubResource("Resource_k5xa1")])
+metadata/_custom_type_script = "uid://ccc6dbr3u3w68"

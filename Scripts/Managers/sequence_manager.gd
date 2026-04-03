@@ -48,7 +48,7 @@ func play_ending(bunny: Node2D, cave_position: Vector2):
 	await focus_camera_on_position(midpoint, 1.3)
 
 	# Start dialogue
-	var dialogue = preload("res://dialogue/day7_ending.tres")
+	var dialogue = preload("res://dialogue/day5_end_good.tres")
 	DialogueManager.start_dialogue(dialogue)
 
 	await DialogueManager.dialogue_ended

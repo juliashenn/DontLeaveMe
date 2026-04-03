@@ -1,23 +1,36 @@
-[gd_scene load_steps=12 format=3 uid="uid://bfou3cssay5ij"]
+[gd_scene load_steps=18 format=3 uid="uid://bfou3cssay5ij"]
 
 [ext_resource type="Script" uid="uid://bjc0ptpvtt0r3" path="res://Scripts/ui.gd" id="1_jxero"]
 [ext_resource type="Texture2D" uid="uid://ceexwhxng8dy7" path="res://Assets/Carott/sprite_carotte0.png" id="2_2246s"]
+[ext_resource type="FontFile" uid="uid://5xphnau42jqr" path="res://Assets/vonwaon-bitmap.ttf/VonwaonBitmap-16px.ttf" id="3_m78vo"]
 [ext_resource type="Texture2D" uid="uid://bfv2ccr6s4xgd" path="res://Assets/egg.png" id="3_q7pk6"]
 [ext_resource type="Texture2D" uid="uid://pf53kdi6igey" path="res://Assets/torches.png" id="4_m78vo"]
 [ext_resource type="Texture2D" uid="uid://2uxd7xnffgsh" path="res://Assets/Freebuttons/freebuttons2.png" id="5_q7pk6"]
+[ext_resource type="Texture2D" uid="uid://dwb40aehhbk4k" path="res://Assets/map.png" id="7_smcll"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_2246s"]
-font_size = 24
+font = ExtResource("3_m78vo")
+font_size = 42
 
 [sub_resource type="LabelSettings" id="LabelSettings_q7pk6"]
-font_size = 24
+font = ExtResource("3_m78vo")
+font_size = 42
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_smcll"]
 atlas = ExtResource("4_m78vo")
 region = Rect2(22, 32, 16, 24)
 
 [sub_resource type="LabelSettings" id="LabelSettings_m78vo"]
-font_size = 24
+font = ExtResource("3_m78vo")
+font_size = 42
+
+[sub_resource type="LabelSettings" id="LabelSettings_smcll"]
+font = ExtResource("3_m78vo")
+font_size = 42
+
+[sub_resource type="LabelSettings" id="LabelSettings_ryf15"]
+font = ExtResource("3_m78vo")
+font_size = 32
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m78vo"]
 atlas = ExtResource("5_q7pk6")
@@ -26,6 +39,14 @@ region = Rect2(32, 0, 16, 16)
 [sub_resource type="AtlasTexture" id="AtlasTexture_ryf15"]
 atlas = ExtResource("5_q7pk6")
 region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mmixe"]
+atlas = ExtResource("5_q7pk6")
+region = Rect2(0, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nt8jn"]
+atlas = ExtResource("5_q7pk6")
+region = Rect2(16, 32, 16, 16)
 
 [node name="UI" type="CanvasLayer"]
 script = ExtResource("1_jxero")
@@ -65,7 +86,7 @@ label_settings = SubResource("LabelSettings_q7pk6")
 [node name="Torch" type="HBoxContainer" parent="VBox"]
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
-theme_override_constants/separation = 16
+theme_override_constants/separation = 10
 
 [node name="Torch" type="TextureRect" parent="VBox/Torch"]
 layout_mode = 2
@@ -85,13 +106,25 @@ offset_right = 2.0
 offset_bottom = 49.0
 grow_horizontal = 2
 
-[node name="TimeLabel" type="Label" parent="CenterContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="DayLabel" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Day X"
+label_settings = SubResource("LabelSettings_smcll")
+horizontal_alignment = 1
+
+[node name="TimeLabel" type="Label" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
 text = "time
 "
+label_settings = SubResource("LabelSettings_ryf15")
+horizontal_alignment = 1
 
 [node name="PauseButton" type="TextureButton" parent="."]
-anchors_preset = -1
+anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
 offset_left = -58.0
@@ -102,4 +135,38 @@ texture_normal = SubResource("AtlasTexture_m78vo")
 texture_pressed = SubResource("AtlasTexture_ryf15")
 stretch_mode = 5
 
+[node name="Map" type="TextureRect" parent="."]
+anchors_preset = -1
+anchor_top = 0.29900002
+anchor_right = 1.0
+anchor_bottom = 0.592
+offset_left = 247.0
+offset_top = -124.752014
+offset_right = -222.0
+offset_bottom = 201.384
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("7_smcll")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureButton" type="TextureButton" parent="Map"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.48600003
+anchor_top = 0.924
+anchor_right = 0.48600003
+anchor_bottom = 0.924
+offset_left = -575.938
+offset_top = 0.21600342
+offset_right = 576.062
+offset_bottom = 89.21597
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = SubResource("AtlasTexture_mmixe")
+texture_pressed = SubResource("AtlasTexture_nt8jn")
+stretch_mode = 5
+
 [connection signal="pressed" from="PauseButton" to="." method="_on_pause_button_pressed"]
+[connection signal="pressed" from="Map/TextureButton" to="." method="_on_texture_button_pressed"]

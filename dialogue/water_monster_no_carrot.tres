@@ -1,0 +1,39 @@
+[gd_resource type="Resource" script_class="DialogueResource" load_steps=8 format=3 uid="uid://uir8agaebg3r"]
+
+[ext_resource type="Script" uid="uid://c1y04o8kyakix" path="res://Resources/DialogueLine.gd" id="1_3xweo"]
+[ext_resource type="Script" uid="uid://ccc6dbr3u3w68" path="res://Resources/DialogueResource.gd" id="2_nw27i"]
+
+[sub_resource type="Resource" id="Resource_gw0xx"]
+script = ExtResource("1_3xweo")
+speaker = "Unknown Monster"
+text = "Who is there?"
+metadata/_custom_type_script = "uid://c1y04o8kyakix"
+
+[sub_resource type="Resource" id="Resource_r4ocy"]
+script = ExtResource("1_3xweo")
+speaker = "Unknown Monster"
+text = "Leave me alone!"
+metadata/_custom_type_script = "uid://c1y04o8kyakix"
+
+[sub_resource type="Resource" id="Resource_frp8s"]
+script = ExtResource("1_3xweo")
+speaker = "Unknown Monster "
+text = "I would take a carrot from you, but you have none."
+metadata/_custom_type_script = "uid://c1y04o8kyakix"
+
+[sub_resource type="Resource" id="Resource_3xweo"]
+script = ExtResource("1_3xweo")
+speaker = "Unknown Monster "
+text = "Useless Human."
+metadata/_custom_type_script = "uid://c1y04o8kyakix"
+
+[sub_resource type="Resource" id="Resource_nw27i"]
+script = ExtResource("1_3xweo")
+speaker = "Unknown Monster "
+text = "Next time this happens, I'll take your life."
+metadata/_custom_type_script = "uid://c1y04o8kyakix"
+
+[resource]
+script = ExtResource("2_nw27i")
+lines = Array[ExtResource("1_3xweo")]([SubResource("Resource_gw0xx"), SubResource("Resource_r4ocy"), SubResource("Resource_frp8s"), SubResource("Resource_3xweo"), SubResource("Resource_nw27i")])
+metadata/_custom_type_script = "uid://ccc6dbr3u3w68"

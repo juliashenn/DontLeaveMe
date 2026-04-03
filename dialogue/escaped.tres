@@ -1,0 +1,45 @@
+[gd_resource type="Resource" script_class="DialogueResource" load_steps=10 format=3 uid="uid://7j16swqflf3s"]
+
+[ext_resource type="Script" uid="uid://c1y04o8kyakix" path="res://Resources/DialogueLine.gd" id="1_3wh5s"]
+[ext_resource type="Script" uid="uid://ccc6dbr3u3w68" path="res://Resources/DialogueResource.gd" id="2_j4ntd"]
+
+[sub_resource type="Resource" id="Resource_3wh5s"]
+script = ExtResource("1_3wh5s")
+text = "You got away."
+metadata/_custom_type_script = "uid://c1y04o8kyakix"
+
+[sub_resource type="Resource" id="Resource_j4ntd"]
+script = ExtResource("1_3wh5s")
+text = "...that’s okay."
+metadata/_custom_type_script = "uid://c1y04o8kyakix"
+
+[sub_resource type="Resource" id="Resource_erlrh"]
+script = ExtResource("1_3wh5s")
+text = "I can wait."
+metadata/_custom_type_script = "uid://c1y04o8kyakix"
+
+[sub_resource type="Resource" id="Resource_tfaj4"]
+script = ExtResource("1_3wh5s")
+text = "Someone else will come."
+metadata/_custom_type_script = "uid://c1y04o8kyakix"
+
+[sub_resource type="Resource" id="Resource_g0dyo"]
+script = ExtResource("1_3wh5s")
+text = "They always do."
+metadata/_custom_type_script = "uid://c1y04o8kyakix"
+
+[sub_resource type="Resource" id="Resource_17ob0"]
+script = ExtResource("1_3wh5s")
+text = "And next time."
+metadata/_custom_type_script = "uid://c1y04o8kyakix"
+
+[sub_resource type="Resource" id="Resource_um55j"]
+script = ExtResource("1_3wh5s")
+text = "I won’t let them leave."
+animation = "Sleeping"
+metadata/_custom_type_script = "uid://c1y04o8kyakix"
+
+[resource]
+script = ExtResource("2_j4ntd")
+lines = Array[ExtResource("1_3wh5s")]([SubResource("Resource_3wh5s"), SubResource("Resource_j4ntd"), SubResource("Resource_erlrh"), SubResource("Resource_tfaj4"), SubResource("Resource_g0dyo"), SubResource("Resource_17ob0"), SubResource("Resource_um55j")])
+metadata/_custom_type_script = "uid://ccc6dbr3u3w68"

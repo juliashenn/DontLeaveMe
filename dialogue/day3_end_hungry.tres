@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="DialogueResource" load_steps=6 format=3 uid="uid://d24ki0hgadk1x"]
+
+[ext_resource type="Script" uid="uid://c1y04o8kyakix" path="res://Resources/DialogueLine.gd" id="1_63mi3"]
+[ext_resource type="Script" uid="uid://ccc6dbr3u3w68" path="res://Resources/DialogueResource.gd" id="2_72de2"]
+
+[sub_resource type="Resource" id="Resource_63mi3"]
+script = ExtResource("1_63mi3")
+text = "You didn’t bring enough."
+metadata/_custom_type_script = "uid://c1y04o8kyakix"
+
+[sub_resource type="Resource" id="Resource_72de2"]
+script = ExtResource("1_63mi3")
+text = "I needed you to do that for me."
+metadata/_custom_type_script = "uid://c1y04o8kyakix"
+
+[sub_resource type="Resource" id="Resource_hnalg"]
+script = ExtResource("1_63mi3")
+text = "You understand that, right?"
+metadata/_custom_type_script = "uid://c1y04o8kyakix"
+
+[resource]
+script = ExtResource("2_72de2")
+lines = Array[ExtResource("1_63mi3")]([SubResource("Resource_63mi3"), SubResource("Resource_72de2"), SubResource("Resource_hnalg")])
+metadata/_custom_type_script = "uid://ccc6dbr3u3w68"

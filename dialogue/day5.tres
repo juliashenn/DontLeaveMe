@@ -1,0 +1,49 @@
+[gd_resource type="Resource" script_class="DialogueResource" load_steps=11 format=3 uid="uid://d336an7ee5p6a"]
+
+[ext_resource type="Script" uid="uid://c1y04o8kyakix" path="res://Resources/DialogueLine.gd" id="1_tq3vl"]
+[ext_resource type="Script" uid="uid://ccc6dbr3u3w68" path="res://Resources/DialogueResource.gd" id="2_up0p7"]
+
+[sub_resource type="Resource" id="Resource_tq3vl"]
+script = ExtResource("1_tq3vl")
+text = "You’re still here."
+metadata/_custom_type_script = "uid://c1y04o8kyakix"
+
+[sub_resource type="Resource" id="Resource_up0p7"]
+script = ExtResource("1_tq3vl")
+text = "After everything."
+metadata/_custom_type_script = "uid://c1y04o8kyakix"
+
+[sub_resource type="Resource" id="Resource_oqksh"]
+script = ExtResource("1_tq3vl")
+text = "You never left."
+metadata/_custom_type_script = "uid://c1y04o8kyakix"
+
+[sub_resource type="Resource" id="Resource_tg1hb"]
+script = ExtResource("1_tq3vl")
+text = "Even when you could have."
+metadata/_custom_type_script = "uid://c1y04o8kyakix"
+
+[sub_resource type="Resource" id="Resource_3coox"]
+script = ExtResource("1_tq3vl")
+text = "Go do what you've been doing."
+metadata/_custom_type_script = "uid://c1y04o8kyakix"
+
+[sub_resource type="Resource" id="Resource_np04x"]
+script = ExtResource("1_tq3vl")
+text = "The field. The chickens. The torches. The water."
+metadata/_custom_type_script = "uid://c1y04o8kyakix"
+
+[sub_resource type="Resource" id="Resource_c2lpe"]
+script = ExtResource("1_tq3vl")
+text = "Just come back to me again."
+metadata/_custom_type_script = "uid://c1y04o8kyakix"
+
+[sub_resource type="Resource" id="Resource_2wjba"]
+script = ExtResource("1_tq3vl")
+text = "Like always."
+metadata/_custom_type_script = "uid://c1y04o8kyakix"
+
+[resource]
+script = ExtResource("2_up0p7")
+lines = Array[ExtResource("1_tq3vl")]([SubResource("Resource_tq3vl"), SubResource("Resource_up0p7"), SubResource("Resource_oqksh"), SubResource("Resource_tg1hb"), SubResource("Resource_3coox"), SubResource("Resource_np04x"), SubResource("Resource_c2lpe"), SubResource("Resource_2wjba")])
+metadata/_custom_type_script = "uid://ccc6dbr3u3w68"

@@ -1,7 +1,9 @@
 extends CanvasLayer
-@onready var time_label: Label = $CenterContainer/TimeLabel
+@onready var time_label: Label = $CenterContainer/VBoxContainer/TimeLabel
 @onready var egg: HBoxContainer = $VBox/Egg
 @onready var torch: HBoxContainer = $VBox/Torch
+@onready var day_label: Label = $CenterContainer/VBoxContainer/DayLabel
+@onready var map: TextureRect = $Map
 
 var labels = {}
 var boxes = {}
@@ -17,12 +19,14 @@ func _ready() -> void:
 		"torch": $VBox/Torch,
 		"egg": $VBox/Egg,
 	}
+	map.visible = false
 	egg.visible = false
 	torch.visible = false
 	ResourceManager.resource_changed.connect(_on_resource_changed)
 	ResourceManager.food_requirement_changed.connect(_on_food_requirement_changed)
 	DayManager.time_updated.connect(_on_time_changed)
 	update_all()
+	day_label.text = get_parent().name
 
 func _on_time_changed(time):
 	var seconds = int(time)
@@ -35,7 +39,7 @@ func _on_time_changed(time):
 func _on_resource_changed(type, amount):
 	if labels.has(type):
 		labels[type].text = _format_text(type, amount)
-		if amount != 0:
+		if amount != 0 or type == "carrot":
 			boxes[type].visible = true
 		else:
 			boxes[type].visible = false
@@ -66,7 +70,13 @@ func _format_text(type: String, value: int) -> String:
 func _input(event):
 	if event.is_action_pressed("ui_cancel"):
 		DayManager.pause_game()
+	if event.is_action_pressed("map"):
+		map.visible = !map.visible
 
 
 func _on_pause_button_pressed() -> void:
 	DayManager.pause_game()
+
+
+func _on_texture_button_pressed() -> void:
+	map.visible = false
