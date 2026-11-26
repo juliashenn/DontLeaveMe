@@ -98,7 +98,7 @@ var failed_end_dialogue = preload("res://dialogue/day5_end_5fails.tres")
 var failed_days = 0
 
 func start_day():
-	ResourceManager.reset_day_resources()	
+	ResourceManager.reset_day_resources()
 	match current_day:
 		1:
 			ResourceManager.set_required_food(3)
@@ -114,7 +114,7 @@ func start_day():
 			time_limit = 120
 		5:
 			ResourceManager.set_required_food(4)
-			time_limit = 180
+			time_limit = 5
 		# scale as needed
 	time_left = time_limit
 	set_state(GameState.DIALOGUE)
